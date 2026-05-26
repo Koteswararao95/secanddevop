@@ -1,16 +1,17 @@
-FROM python:3.9-slim
-
+﻿FROM node:18-alpine AS builder
 WORKDIR /app
+COPY package*.json ./
+RUN npm install --production
 
-# Copy the requirements file and install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+FROM node:18-alpine
+WORKDIR /app
+COPY --from=builder /app/node_modules ./node_modules
+COPY app.js .
+COPY package.json .
 
-# Copy the rest of the application code
-COPY . .
+RUN addgroup -g 1001 -S nodejs; adduser -S nodejs -u 1001
+USER nodejs
 
-# Expose the port the app runs on
-EXPOSE 5000
-
-# Command to run the application
-CMD ["python", "app.py"]
+EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 CMD node -e "require('http').get('http://localhost:3000/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+CMD ["npm", "start"]
