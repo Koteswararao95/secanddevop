@@ -12,7 +12,6 @@
 ├── .gitignore
 ├── app.js
 ├── app.py
-├── Assignment-SecAndDevOpsAI-2026-DevOps.pdf
 ├── Dockerfile
 ├── package.json
 ├── requirements.txt
