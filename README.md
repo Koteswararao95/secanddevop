@@ -77,6 +77,9 @@ docker run -p 8080:8080 secanddevops
 GitHub Actions workflows are configured in `.github/workflows/` for automated testing and deployment.
 
 
+<img width="1913" height="1065" alt="ass1" src="https://github.com/user-attachments/assets/a8dd8134-559f-474b-b15c-1452496c38b2" />
+<img width="1910" height="1099" alt="ass11" src="https://github.com/user-attachments/assets/de15a921-98a3-4bb3-ac78-ac430d36d603" />
+
 
 
 
