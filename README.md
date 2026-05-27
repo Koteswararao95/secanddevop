@@ -12,7 +12,6 @@
 ├── .gitignore
 ├── app.js
 ├── app.py
-├── Assignment-SecAndDevOpsAI-2026-DevOps.pdf
 ├── Dockerfile
 ├── package.json
 ├── requirements.txt
@@ -76,3 +75,10 @@ docker run -p 8080:8080 secanddevops
 ## CI/CD
 
 GitHub Actions workflows are configured in `.github/workflows/` for automated testing and deployment.
+
+
+
+
+
+
+
